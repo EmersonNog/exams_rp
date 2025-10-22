@@ -2,6 +2,7 @@ import { useState } from 'react'
 import ExamCard from '../components/ExamCard'
 import type { Exam } from '../components/ExamCard'
 import LogoCivil from '../assets/policia_civil.png' 
+import { useNavigate } from 'react-router-dom'
 
 const EXAMS: Exam[] = [
   {
@@ -22,6 +23,7 @@ const EXAMS: Exam[] = [
 
 export default function Home() {
   const [selected, setSelected] = useState<Exam | null>(null) 
+  const navigate = useNavigate()
 
   return (
     <div className="min-h-screen w-full bg-gradient-to-b from-slate-50 to-slate-100 p-6"> 
@@ -81,15 +83,15 @@ export default function Home() {
               </ol>
               <div className="mt-4 flex justify-center gap-3">
                 <button
-  onClick={() => {
-    if (selected) {
-      window.open(`/exam/${selected.id}`, '_blank') 
-    }
-  }}
-  className="bg-gray-900 text-white px-5 py-2 rounded-xl font-semibold shadow-lg hover:bg-gray-800 hover:scale-105 transition transform duration-200 cursor-pointer"
->
-  Iniciar Simulado
-</button>
+      onClick={() => {
+        if (selected) {
+          navigate(`/exam/${selected.id}`) 
+        }
+      }}
+      className="bg-gray-900 text-white px-5 py-2 rounded-xl font-semibold shadow-lg hover:bg-gray-800 hover:scale-105 transition transform duration-200 cursor-pointer"
+    >
+      Iniciar Prova
+    </button>
 
 
               </div>
