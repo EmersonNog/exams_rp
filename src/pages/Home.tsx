@@ -1,8 +1,7 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import ExamCard from '../components/ExamCard'
 import type { Exam } from '../components/ExamCard'
-import LogoCivil from '../assets/policia_civil.png'
-import { useNavigate } from 'react-router-dom'
+import LogoCivil from '../assets/policia_civil.png' 
 
 const EXAMS: Exam[] = [
   {
@@ -22,12 +21,10 @@ const EXAMS: Exam[] = [
 ]
 
 export default function Home() {
-  const [selected, setSelected] = useState<Exam | null>(null)
-  const navigate = useNavigate()
+  const [selected, setSelected] = useState<Exam | null>(null) 
 
   return (
-    <div className="min-h-screen w-full bg-gradient-to-b from-slate-50 to-slate-100 p-6">
-      {/* Header */}
+    <div className="min-h-screen w-full bg-gradient-to-b from-slate-50 to-slate-100 p-6"> 
       <header className="mb-8 flex flex-col items-center">
         <img src={LogoCivil} alt="Polícia Civil" className="w-32 mb-4" />
         <h1 className="text-3xl font-extrabold text-slate-800 text-center">
@@ -37,8 +34,7 @@ export default function Home() {
           Selecione abaixo a prova que deseja realizar.
         </p>
       </header>
-
-      {/* Categorias de provas */}
+ 
       <section className="w-full mb-8">
         <div className="flex flex-wrap justify-center gap-6 w-full">
           <div className="flex-1 min-w-[200px] max-w-[300px] bg-white p-6 rounded-2xl shadow-md hover:shadow-lg transition text-center cursor-default">
@@ -63,8 +59,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Cards de provas */}
+ 
       <section className="flex flex-col items-center w-full px-4">
         <div className="flex flex-wrap justify-center w-full mt-6">
           {EXAMS.map((e) => (
@@ -73,8 +68,7 @@ export default function Home() {
             </div>
           ))}
         </div>
-
-        {/* Seleção */}
+ 
         <div className="mt-8 w-full px-2">
           {selected ? (
             <div className="bg-white p-6 rounded-2xl shadow-md text-center mx-auto max-w-4xl">
@@ -89,7 +83,7 @@ export default function Home() {
                 <button
   onClick={() => {
     if (selected) {
-      window.open(`/exam/${selected.id}`, '_blank') // usa o id da prova selecionada
+      window.open(`/exam/${selected.id}`, '_blank') 
     }
   }}
   className="bg-gray-900 text-white px-5 py-2 rounded-xl font-semibold shadow-lg hover:bg-gray-800 hover:scale-105 transition transform duration-200 cursor-pointer"

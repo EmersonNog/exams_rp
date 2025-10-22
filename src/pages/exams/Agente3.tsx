@@ -1,5 +1,3 @@
-import React from 'react'
-
 export default function Agente3() {
   return (
     <div className="min-h-screen flex flex-col items-center bg-slate-100 p-6">

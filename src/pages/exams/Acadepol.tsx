@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { jsPDF } from 'jspdf'
 
 export default function Acadepol() {
@@ -95,8 +95,7 @@ export default function Acadepol() {
             onChange={(e) => handleChange('ID', e.target.value)}
           />
         </div>
-
-        {/* Questão 1 - Múltipla escolha com radios */}
+ 
         <div>
           <p className="font-semibold text-blue-400">{questions[0].text}</p>
           <div className="flex flex-col mt-2 gap-2">
@@ -119,8 +118,7 @@ export default function Acadepol() {
             ))}
           </div>
         </div>
-
-        {/* Demais questões até a 12 */}
+ 
         {questions.slice(1, 12).map((item) => (
           <div key={item.q}>
             <p className="font-semibold text-blue-400">{item.text}</p>
@@ -131,8 +129,7 @@ export default function Acadepol() {
             />
           </div>
         ))}
-
-        {/* Perguntas Pessoais */}
+ 
         <h2 className="text-xl font-bold text-blue-400">Perguntas pessoais</h2>
         {questions.slice(12).map((item) => (
           <div key={item.q}>
@@ -144,8 +141,7 @@ export default function Acadepol() {
             />
           </div>
         ))}
-
-        {/* Botão salvar PDF */}
+ 
         <button
           className="mt-6 bg-blue-900 text-white px-5 py-2 rounded-xl font-semibold shadow-lg hover:bg-blue-800 hover:scale-105 transition transform duration-200 cursor-pointer"
           onClick={saveAsPDF}
