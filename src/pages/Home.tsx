@@ -9,7 +9,7 @@ const EXAMS: Exam[] = [
     id: 'acadepol',
     title: 'ACADEPOL',
     subtitle: 'Concurso Polícia Civil - ACADEPOL',
-    description: 'Prova completa com conhecimentos gerais, específicos e redação.',
+    description: 'Prova completa com conhecimentos gerais e específicos.',
     durationMinutes: 15,
   },
   // {
